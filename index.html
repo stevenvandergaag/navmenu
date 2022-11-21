@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>opdracht github</h1>
+<div class="menu">
+    <div id="mainMenu"></div>
+    <div class="clear"></div>
+</div>
+<script>
+    const menuItems = [
+        {
+            "name" : "Home",
+            "url" : "#",
+            "submenu" : []
+        },
+        {
+            "name" : "About",
+            "url" : "#",
+            "submenu" : []
+        },
+        {
+            "name" : "Services",
+            "url" : "#",
+            "submenu" : [
+                {
+                    "name" : "socialmedia",
+                    "url" : "www.stevenvandergaag.com"
+                },
+                {
+                    "name" : "test",
+                    "url" : "#"
+                },
+                {
+                    "name" : "hallo",
+                    "url" : "#"
+                }
+            ]
+        },
+        {
+            "name" : "Contact",
+            "url" : "#",
+            "submenu" : []
+        }
+    ]
+
+    let mainMenu = "<ul>";
+    for(let m = 0; m < menuItems.length; m++) {
+        mainMenu += "<li>";
+        mainMenu += "<a href='" + menuItems[m].url + "'>" + menuItems[m].name + "</a>";
+        if(menuItems[m].submenu.length > 0) {
+            mainMenu += "<ul>";
+            for(let n = 0; n < menuItems[m].submenu.length; n++) {
+                mainMenu += "<li>";
+                mainMenu += "<a href='" + menuItems[m].submenu[n].url + "'>" + menuItems[m].submenu[n].name + "</a>";
+                mainMenu += "</li>";
+            }
+            mainMenu += "</ul>";
+        }
+        mainMenu += "</li>";
+    }
+
+    document.getElementById("mainMenu").innerHTML = mainMenu;
+
+</script>
+</body>
+</html>
